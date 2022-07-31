@@ -1,0 +1,32 @@
+ALGORITHM Array
+VAR
+    tableau_1 : ARRAY_OF INTEGER[4] := {3, 1, 7, 9}
+    tableau_2 : ARRAY_OF INTEGER[5] := {2, 4, 1, 9, 3}
+    sum, count : INTEGER := 0;
+    htab : HASH_TABLE<INTEGER,INTEGER>
+BEGIN
+    FOR i FROM 0 TO tableau_1.length-1 STEP 1  DO
+        htab.insert(tableau_1[i], 1);
+    END_FOR
+
+    FOR j FROM 0 TO tableau_2.length-1 STEP 1  DO
+        IF (htab.lookup(tableau_2[j]) = False) THEN
+            htab.insert(tableau_1[i], 1);
+        ELSE
+            count := htab.get-tableau_2[i];
+            htab.insert(tableau_2[j], count + 1)
+        END_IF
+    END_FOR
+
+    FOR k FROM 0 TO tableau_1.length-1 STEP 1  DO
+        IF (htab.get(tableau_1[k]) = 1) THEN
+            sum := sum + tableau_1[k];
+        END_IF
+    END_FOR
+
+    FOR l FROM 0 TO tableau_2.length-1 STEP 1  DO
+        IF (htab.get(tableau_2[l]) = 1) THEN
+            sum := sum + tableau_2[l];
+        END_IF
+    END_FOR
+END
